@@ -1,7 +1,7 @@
 const express = require('express');
 const Model = require('../models/model');
 const router = express.Router();
-
+const os = require('os')
 //Post Method
 router.post('/post', async (req, res) => {
     const data = new Model({
@@ -22,7 +22,7 @@ router.post('/post', async (req, res) => {
 router.get('/getAll', async (req, res) => {
     try {
         const data = await Model.find();
-        res.json(data)
+        res.json(data.push(os.hostname()))
     }
     catch (error) {
         res.status(500).json({ message: error.message })
