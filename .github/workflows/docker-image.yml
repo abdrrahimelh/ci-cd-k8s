@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: $DOCKERHUB_USERNAME/app:${{ steps.date.outputs.date }}
+          tags: abderrahimelh/app:${{ steps.date.outputs.date }}
