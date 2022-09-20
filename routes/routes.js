@@ -23,6 +23,7 @@ router.get('/getAll', async (req, res) => {
     try {
         const data = await Model.find();
         res.json(data)
+        console.log("nah")
         console.log(os.hostname())
     }
     catch (error) {
